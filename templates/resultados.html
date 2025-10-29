@@ -2,39 +2,99 @@
 <html>
 <head>
   <title>Resultados de Encuesta</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ecfdf5, #f0fdf4);
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      color: #166534;
+      margin-top: 30px;
+    }
+    h3 {
+      margin-top: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    th {
+      font-weight: bold;
+    }
+    tr:hover {
+      background-color: #f9fafb;
+    }
+    .promedios th {
+      background-color: #a7f3d0;
+      color: #065f46;
+    }
+    .textos th {
+      background-color: #fed7aa;
+      color: #92400e;
+    }
+    a {
+      text-decoration: none;
+      color: #047857;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #065f46;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: #d1d5db;
+      margin: 40px 0;
+    }
+    p {
+      font-style: italic;
+    }
+  </style>
 </head>
-<body bgcolor="#f5fffa">
+<body>
 
 <center>
-  <h2 style="color:darkgreen;">📈 Resultados de la Encuesta</h2>
+  <h2>📈 Resultados de la Encuesta</h2>
   <hr width="60%" color="green">
 
   <!-- Promedios de preguntas numéricas -->
-  <h3 style="color:darkblue;">📊 Promedios (Preguntas Numéricas)</h3>
+  <h3 style="color:#1e3a8a;">📊 Promedios (Preguntas Numéricas)</h3>
   {% if promedios %}
-    <table border="1" cellpadding="10" cellspacing="0" bgcolor="white">
-      <tr bgcolor="#c8f7c5">
+    <table class="promedios">
+      <tr>
         <th>Pregunta</th>
         <th>Promedio</th>
       </tr>
       {% for d in promedios %}
-        <tr align="center">
+        <tr>
           <td>{{ d[0] }}</td>
           <td>{{ "%.2f"|format(d[1]) if d[1] else "Sin respuestas" }}</td>
         </tr>
       {% endfor %}
     </table>
   {% else %}
-    <p><i>No hay preguntas numéricas con respuestas.</i></p>
+    <p>No hay preguntas numéricas con respuestas.</p>
   {% endif %}
 
-  <br><hr width="40%" color="gray"><br>
+  <hr>
 
   <!-- Respuestas textuales -->
-  <h3 style="color:brown;">💬 Respuestas Abiertas (Texto)</h3>
+  <h3 style="color:#b45309;">💬 Respuestas Abiertas (Texto)</h3>
   {% if textos %}
-    <table border="1" cellpadding="10" cellspacing="0" bgcolor="white">
-      <tr bgcolor="#ffe4b5">
+    <table class="textos">
+      <tr>
         <th>Pregunta</th>
         <th>Respuesta</th>
         <th>Usuario</th>
@@ -48,7 +108,7 @@
       {% endfor %}
     </table>
   {% else %}
-    <p><i>No hay respuestas textuales registradas.</i></p>
+    <p>No hay respuestas textuales registradas.</p>
   {% endif %}
 
   <br><a href="/">⬅️ Volver al inicio</a>
