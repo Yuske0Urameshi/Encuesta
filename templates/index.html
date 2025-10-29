@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Evaluación de Satisfacción</title>
+</head>
+<body bgcolor="#f4f4f4" text="#222">
+
+<center>
+  <h1 style="color:darkblue;">📊 Sistema de Evaluación de Satisfacción</h1>
+  <hr width="80%" color="blue">
+  <br>
+
+  <table border="0" cellpadding="10">
+    <tr>
+      <td><a href="/crear_encuesta">📝 Crear Encuesta</a></td>
+      <td><a href="/registrar_usuario">👤 Registrar Usuario</a></td>
+    </tr>
+  </table>
+
+  <h2 style="color:darkgreen;">Encuestas disponibles</h2>
+
+  {% if encuestas %}
+    <table border="1" cellpadding="8" cellspacing="0" bgcolor="white">
+      <tr bgcolor="#d3d3ff">
+        <th>ID</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+      {% for e in encuestas %}
+        <tr align="center">
+          <td>{{ e[0] }}</td>
+          <td><b>{{ e[1] }}</b></td>
+          <td>{{ e[2] }}</td>
+          <td>{{ e[3] }}</td>
+          <td>
+            <a href="/agregar_pregunta/{{ e[0] }}">➕ Preguntas</a> |
+            <a href="/responder/{{ e[0] }}">🗳️ Responder</a> |
+            <a href="/resultados/{{ e[0] }}">📈 Resultados</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p><i>No hay encuestas registradas todavía.</i></p>
+  {% endif %}
+</center>
+
+</body>
+</html>

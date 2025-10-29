@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resultados de Encuesta</title>
+</head>
+<body bgcolor="#f5fffa">
+
+<center>
+  <h2 style="color:darkgreen;">📈 Resultados de la Encuesta</h2>
+  <hr width="60%" color="green">
+
+  <!-- Promedios de preguntas numéricas -->
+  <h3 style="color:darkblue;">📊 Promedios (Preguntas Numéricas)</h3>
+  {% if promedios %}
+    <table border="1" cellpadding="10" cellspacing="0" bgcolor="white">
+      <tr bgcolor="#c8f7c5">
+        <th>Pregunta</th>
+        <th>Promedio</th>
+      </tr>
+      {% for d in promedios %}
+        <tr align="center">
+          <td>{{ d[0] }}</td>
+          <td>{{ "%.2f"|format(d[1]) if d[1] else "Sin respuestas" }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p><i>No hay preguntas numéricas con respuestas.</i></p>
+  {% endif %}
+
+  <br><hr width="40%" color="gray"><br>
+
+  <!-- Respuestas textuales -->
+  <h3 style="color:brown;">💬 Respuestas Abiertas (Texto)</h3>
+  {% if textos %}
+    <table border="1" cellpadding="10" cellspacing="0" bgcolor="white">
+      <tr bgcolor="#ffe4b5">
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+        <th>Usuario</th>
+      </tr>
+      {% for t in textos %}
+        <tr>
+          <td><b>{{ t[0] }}</b></td>
+          <td>{{ t[1] if t[1] else "—" }}</td>
+          <td>{{ t[2] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p><i>No hay respuestas textuales registradas.</i></p>
+  {% endif %}
+
+  <br><a href="/">⬅️ Volver al inicio</a>
+</center>
+
+</body>
+</html>

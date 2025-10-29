@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responder Encuesta</title>
+</head>
+<body bgcolor="#f8f8ff">
+
+<center>
+  <h2 style="color:darkblue;">🗳️ Responder Encuesta</h2>
+  <hr width="60%" color="blue">
+
+  <form method="POST">
+    <table border="0" cellpadding="10">
+      <tr>
+        <td><b>Selecciona tu usuario:</b></td>
+        <td>
+          <select name="usuario" required>
+            {% for u in usuarios %}
+              <option value="{{ u[0] }}">{{ u[1] }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+    <table border="1" cellpadding="10" cellspacing="0" bgcolor="white">
+      <tr bgcolor="#d3d3ff">
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+      </tr>
+
+      {% for p in preguntas %}
+        <tr>
+          <td><b>{{ p[2] }}</b></td>
+          <td>
+            {% if p[3] == 'numero' %}
+              Valor (1-5): <input type="number" name="valor_{{ p[0] }}" min="1" max="5">
+            {% else %}
+              <input type="text" name="pregunta_{{ p[0] }}">
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <br>
+    <button type="submit">📤 Enviar Respuestas</button>
+  </form>
+
+  <br><a href="/">⬅️ Volver al inicio</a>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrar Usuario</title>
+</head>
+<body bgcolor="#f0fff0">
+
+<center>
+  <h2 style="color:darkgreen;">👤 Registrar nuevo usuario</h2>
+  <hr width="60%" color="green">
+
+  <form method="POST">
+    <table border="0" cellpadding="10">
+      <tr>
+        <td><b>Nombre:</b></td>
+        <td><input type="text" name="nombre" size="40" required></td>
+      </tr>
+      <tr>
+        <td><b>Correo:</b></td>
+        <td><input type="email" name="correo" size="40" required></td>
+      </tr>
+      <tr>
+        <td><b>Rol:</b></td>
+        <td>
+          <select name="rol">
+            <option value="usuario">Usuario</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </td>
+      </tr>
+      <tr align="center">
+        <td colspan="2"><button type="submit">💾 Registrar</button></td>
+      </tr>
+    </table>
+  </form>
+
+  <br><a href="/">⬅️ Volver al inicio</a>
+</center>
+
+</body>
+</html>

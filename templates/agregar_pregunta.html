@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Pregunta</title>
+</head>
+<body bgcolor="#fffbea">
+
+<center>
+  <h2 style="color:brown;">➕ Agregar Pregunta a la Encuesta</h2>
+  <hr width="60%" color="orange">
+
+  <form method="POST">
+    <table border="0" cellpadding="10">
+      <tr>
+        <td><b>Texto de la pregunta:</b></td>
+        <td><input type="text" name="texto" size="50" required></td>
+      </tr>
+      <tr>
+        <td><b>Tipo:</b></td>
+        <td>
+          <select name="tipo">
+            <option value="texto">Texto</option>
+            <option value="numero">Número (1-5)</option>
+          </select>
+        </td>
+      </tr>
+      <tr align="center">
+        <td colspan="2"><button type="submit">✅ Agregar Pregunta</button></td>
+      </tr>
+    </table>
+  </form>
+
+  <br><a href="/">⬅️ Volver al inicio</a>
+</center>
+
+</body>
+</html>
