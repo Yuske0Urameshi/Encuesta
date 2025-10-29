@@ -2,22 +2,60 @@
 <html>
 <head>
   <title>Registrar Usuario</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to right, #ecfdf5, #f0fff4);
+    }
+    h2 {
+      color: #065f46;
+      margin-top: 30px;
+    }
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    input, select, button {
+      border-radius: 6px;
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #059669;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #047857;
+    }
+    a {
+      text-decoration: none;
+      color: #047857;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body bgcolor="#f0fff0">
+<body>
 
 <center>
-  <h2 style="color:darkgreen;">👤 Registrar nuevo usuario</h2>
+  <h2>👤 Registrar nuevo usuario</h2>
   <hr width="60%" color="green">
 
   <form method="POST">
     <table border="0" cellpadding="10">
       <tr>
         <td><b>Nombre:</b></td>
-        <td><input type="text" name="nombre" size="40" required></td>
+        <td><input type="text" name="nombre" required></td>
       </tr>
       <tr>
         <td><b>Correo:</b></td>
-        <td><input type="email" name="correo" size="40" required></td>
+        <td><input type="email" name="correo" required></td>
       </tr>
       <tr>
         <td><b>Rol:</b></td>
