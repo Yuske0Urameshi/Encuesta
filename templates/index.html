@@ -2,13 +2,51 @@
 <html>
 <head>
   <title>Sistema de Evaluación de Satisfacción</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #dbeafe, #f3f4f6);
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #1e3a8a;
+      margin-top: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table a {
+      text-decoration: none;
+      color: #1d4ed8;
+      font-weight: bold;
+    }
+    table a:hover {
+      text-decoration: underline;
+      color: #2563eb;
+    }
+    th {
+      background-color: #bfdbfe;
+      color: #1e3a8a;
+    }
+    td, th {
+      padding: 10px 15px;
+    }
+    button, a {
+      transition: all 0.2s ease-in-out;
+    }
+    a:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body bgcolor="#f4f4f4" text="#222">
+<body>
 
 <center>
-  <h1 style="color:darkblue;">📊 Sistema de Evaluación de Satisfacción</h1>
+  <h1>📊 Sistema de Evaluación de Satisfacción</h1>
   <hr width="80%" color="blue">
-  <br>
 
   <table border="0" cellpadding="10">
     <tr>
@@ -17,11 +55,11 @@
     </tr>
   </table>
 
-  <h2 style="color:darkgreen;">Encuestas disponibles</h2>
+  <h2 style="color:#065f46;">Encuestas disponibles</h2>
 
   {% if encuestas %}
     <table border="1" cellpadding="8" cellspacing="0" bgcolor="white">
-      <tr bgcolor="#d3d3ff">
+      <tr>
         <th>ID</th>
         <th>Título</th>
         <th>Descripción</th>
