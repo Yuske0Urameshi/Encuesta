@@ -2,11 +2,76 @@
 <html>
 <head>
   <title>Responder Encuesta</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e0e7ff, #f8fafc);
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-top: 30px;
+    }
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+      text-align: left;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    th {
+      background-color: #c7d2fe;
+      color: #1e3a8a;
+      padding: 10px;
+    }
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    input[type="text"], input[type="number"], select {
+      width: 95%;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background-color: #1d4ed8;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #2563eb;
+      transform: scale(1.03);
+      transition: 0.2s;
+    }
+    a {
+      text-decoration: none;
+      color: #1d4ed8;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    select {
+      background-color: #f9fafb;
+    }
+  </style>
 </head>
-<body bgcolor="#f8f8ff">
+<body>
 
 <center>
-  <h2 style="color:darkblue;">🗳️ Responder Encuesta</h2>
+  <h2>🗳️ Responder Encuesta</h2>
   <hr width="60%" color="blue">
 
   <form method="POST">
@@ -23,9 +88,8 @@
       </tr>
     </table>
 
-    <br>
     <table border="1" cellpadding="10" cellspacing="0" bgcolor="white">
-      <tr bgcolor="#d3d3ff">
+      <tr>
         <th>Pregunta</th>
         <th>Respuesta</th>
       </tr>
@@ -35,7 +99,8 @@
           <td><b>{{ p[2] }}</b></td>
           <td>
             {% if p[3] == 'numero' %}
-              Valor (1-5): <input type="number" name="valor_{{ p[0] }}" min="1" max="5">
+              <label>Valor (1-5):</label>
+              <input type="number" name="valor_{{ p[0] }}" min="1" max="5">
             {% else %}
               <input type="text" name="pregunta_{{ p[0] }}">
             {% endif %}
@@ -45,7 +110,7 @@
     </table>
 
     <br>
-    <button type="submit">📤 Enviar Respuestas</button>
+    <center><button type="submit">📤 Enviar Respuestas</button></center>
   </form>
 
   <br><a href="/">⬅️ Volver al inicio</a>
