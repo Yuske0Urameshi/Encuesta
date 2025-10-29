@@ -2,22 +2,61 @@
 <html>
 <head>
   <title>Crear Encuesta</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom, #e0f2fe, #f0f9ff);
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-top: 30px;
+    }
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    input, textarea, select, button {
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      padding: 8px;
+      width: 100%;
+      font-size: 14px;
+    }
+    button {
+      background-color: #1d4ed8;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2563eb;
+    }
+    a {
+      text-decoration: none;
+      color: #1d4ed8;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body bgcolor="#e6f0ff">
+<body>
 
 <center>
-  <h2 style="color:darkblue;">📝 Crear nueva encuesta</h2>
+  <h2>📝 Crear nueva encuesta</h2>
   <hr width="60%" color="blue">
 
   <form method="POST">
     <table border="0" cellpadding="10">
       <tr>
         <td><b>Título:</b></td>
-        <td><input type="text" name="titulo" size="40" required></td>
+        <td><input type="text" name="titulo" required></td>
       </tr>
       <tr>
         <td><b>Descripción:</b></td>
-        <td><textarea name="descripcion" rows="4" cols="40" required></textarea></td>
+        <td><textarea name="descripcion" rows="4" required></textarea></td>
       </tr>
       <tr align="center">
         <td colspan="2"><button type="submit">💾 Guardar Encuesta</button></td>
